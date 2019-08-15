@@ -1,0 +1,19 @@
+{
+  "name": "duplicates_finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter=mochawesome --reporter-options reportDir=./test-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fs-extra": "^8.1.0",
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.1.0",
+    "recursive-readdir-sync": "^1.0.6"
+  }
+}
