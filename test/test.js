@@ -67,7 +67,7 @@ const OUTPUT_DIR = './test-results',
           `ambigous outlines values detected, check ${OUTL_FILE2} 
           ${
             addContext(this, {title: 'ambigous', value: Array.from(ambigous)}),
-            storeInfo(OUTL_FILE2, Array.from(ambigous).join('\n'))
+            storeInfo(OUTL_FILE2, ambigous.join('\n'))
           }`)
       })
 
