@@ -2,12 +2,14 @@ const recursiveReadSync = require('recursive-readdir-sync');
 const fsx = require('fs-extra');
 const expect = require('chai').expect;
 const addContext = require('mochawesome/addContext');
-const OUTPUT_DIR = './test-results',
-      SCEN_FILE = 'scenarios.txt',
+let OUTPUT_DIR = './output';
+const SCEN_FILE = 'scenarios.txt',
       OUTL_FILE = 'outlines.txt',
       OUTL_FILE2 = 'outlines_no_placeholders.txt';
 
-  before('check reporter dir', () => {
+  before('check reporter dir', function () {
+      // grab the dir from mocha.opts
+    OUTPUT_DIR = fsx.readFileSync('./test/mocha.opts').toString().match(/(reportDir=)([^\s]+)/)[2];
     fsx.ensureDirSync(OUTPUT_DIR);
   })
 
